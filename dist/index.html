@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>glacetek</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlacèTek Ice Cream</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #fff1f5, #ffe4ec);
+      color: #333;
+    }
+
+    header {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      text-align: center;
+      padding: 2rem 0 0.5rem;
+      color: #d45d79;
+    }
+
+    .tagline {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #7b4b57;
+      margin-bottom: 2rem;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0 2rem 3rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+      width: 280px;
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #d45d79;
+      margin-bottom: 1rem;
+    }
+
+    .card-desc {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .calculator {
+      text-align: center;
+      margin: 3rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .calculator select,
+    .calculator input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-top: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      width: 80%;
+    }
+
+    .calculator button {
+      padding: 0.6rem 1.2rem;
+      margin-top: 1rem;
+      font-size: 1rem;
+      background-color: #d45d79;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+
+    .calculator-result {
+      margin-top: 1rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #7b4b57;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      background-color: #fce4ec;
+    }
+  </style>
+</head>
+
+<body>
+  <header>GlacèTek</header>
+  <div class="tagline">Where Fresh Fruits Meet Frozen Luxury</div>
+
+  <div class="container">
+    <div class="card">
+      <div class="card-title">Strawberry Sorbet</div>
+      <div class="card-desc">Pure strawberries, dairy-free and vibrant in flavor. ₹2.0 per gram.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Mango Tango</div>
+      <div class="card-desc">Alphonso mangoes turned into a creamy, tangy delight. ₹1.8 per gram.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Salted Caramel Swirl</div>
+      <div class="card-desc">Velvety caramel with a dash of sea salt. ₹2.2 per gram.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Chocolate Fudge Bliss</div>
+      <div class="card-desc">Rich chocolate and soft fudge swirls. Deeply indulgent. ₹2.4 per gram.</div>
+    </div>
+  </div>
+
+  <div class="calculator">
+    <h2>Price Calculator</h2>
+    <label for="flavor">Select Ice Cream:</label><br>
+    <select id="flavor">
+      <option value="2.0">Strawberry Sorbet</option>
+      <option value="1.8">Mango Tango</option>
+      <option value="2.2">Salted Caramel Swirl</option>
+      <option value="2.4">Chocolate Fudge Bliss</option>
+    </select>
+    <br>
+    <label for="grams">Enter quantity in grams:</label><br>
+    <input type="number" id="grams" placeholder="e.g., 100">
+    <br>
+    <button onclick="calculatePrice()">Calculate Price</button>
+    <div class="calculator-result" id="result"></div>
+  </div>
+
+  <footer>
+    &copy; 2025 GlacèTek. All rights reserved.
+  </footer>
+
+  <script>
+    function calculatePrice() {
+      const grams = document.getElementById('grams').value;
+      const pricePerGram = parseFloat(document.getElementById('flavor').value);
+      if (grams && grams > 0 && pricePerGram) {
+        const total = grams * pricePerGram;
+        document.getElementById('result').innerText = `Total Price: ₹${total.toFixed(2)}`;
+      } else {
+        document.getElementById('result').innerText = 'Please enter a valid quantity and select a flavor.';
+      }
+    }
+  </script>
+</body>
+
+</html>
+<!-- partial -->
+  
+</body>
+</html>
